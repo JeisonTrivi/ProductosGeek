@@ -14,12 +14,21 @@ const routes: Routes = [
     redirectTo: "/inicio"
   },
   {
-    path: "*",
-    component: ErrorComponent
-  },
-  {
     path: "seguridad",
     loadChildren: () => import("./modulos/seguridad/seguridad.module").then(x => x.SeguridadModule)
+  },
+  {
+    path: "cliente",
+    loadChildren: () => import("./modulos/cliente/cliente.module").then( x => x.ClienteModule)
+  },
+  {
+    path: "pedidos",
+    loadChildren: () => import("./modulos/pedidos/pedidos.module").then(x => x.PedidosModule)
+  },
+  //siempre dejar de ultima esta ruta para tome las de arriba 
+  {
+    path: "**",
+    component: ErrorComponent
   }
 ];
 
